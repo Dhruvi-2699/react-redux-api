@@ -1,7 +1,20 @@
 import React from "react";
 
-export const ButtonComponent = ({ btnText }) => {
+export const ButtonComponent = ({
+  btnText,
+  btnColor,
+  handleChange,
+  isDiable,
+}) => {
   return (
-    <button className="bg-blue-500 text-white rounded p-2">{btnText}</button>
+    <button
+      disabled={isDiable}
+      onClick={handleChange}
+      className={`text-white rounded p-2 m-1 ${btnColor} ${
+        isDiable ? "default" : "cursor-pointer"
+      }`}
+    >
+      {btnText}
+    </button>
   );
 };
